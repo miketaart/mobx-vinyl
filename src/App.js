@@ -1,8 +1,16 @@
-import React from "react";
-import "./App.css";
+import React, { Component } from "react";
+import { Provider } from "mobx-react";
+import VinylStore from "./stores/VinylStore";
+import Vinyls from "./containers/Vinyls";
 
-function App() {
-  return <div className="App">test</div>;
+class App extends Component {
+  render() {
+    return (
+      <Provider VinylStore={VinylStore}>
+        <Vinyls />
+      </Provider>
+    );
+  }
 }
 
 export default App;
